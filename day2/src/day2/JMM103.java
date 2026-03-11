@@ -1,0 +1,10 @@
+package day2;
+class JMM103 {
+  public static void main(String args[]) {
+    byte b = -1; //max value=128
+    switch(b) {
+      case 0:    System.out.print("zero "); break;
+      case 100:  System.out.print("100 ");  break;
+      case 1000: System.out.print("1000 "); break;
+      default: System.out.print("Default ");
+}}}
