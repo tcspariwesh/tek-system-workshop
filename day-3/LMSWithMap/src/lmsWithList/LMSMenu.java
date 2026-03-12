@@ -46,7 +46,6 @@ public class LMSMenu {
 					System.out.println("Invalid Choice!!!");
 				}
 			} catch (Exception e) {
-//				e.printStackTrace();
 				sc.nextLine();
 			}
 		}
@@ -57,12 +56,12 @@ public class LMSMenu {
 		String author, title, id;
 		float price;
 		System.out.print("Enter book title: ");
-		title = sc.nextLine();
+		title = sc.next();
 		if (title.trim().equals("")) {
 			throw new Exception("Invalid Book Name");
 		}
 		System.out.print("Enter book author: ");
-		author = sc.nextLine();
+		author = sc.next();
 		if (author.trim().equals("")) {
 			throw new Exception("Invalid Author Name");
 		}
@@ -73,25 +72,15 @@ public class LMSMenu {
 		library.add(id, title, price, author);
 	}
 
-	void handleReservation() {
+	void handleReservation() throws Exception {
 		System.out.print("Enter book name: ");
 		String name = sc.nextLine();
-
-		try {
-			library.reserve(name);
-		} catch (Exception ex) {
-			System.out.println(ex);
-		}
+		library.reserve(name);
 	}
 
-	void handleRemoval() {
+	void handleRemoval() throws Exception {
 		System.out.print("Enter id: ");
 		String id = sc.next();
-
-		try {
-			library.remove(id);
-		} catch (Exception ex) {
-			System.out.println(ex);
-		}
+		library.remove(id);
 	}
 }
