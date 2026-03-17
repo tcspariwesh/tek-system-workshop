@@ -19,6 +19,25 @@ class MathTest {
 	}
 	
 	@Test
+	void testDivide() {
+		int result = math.divide(25, 5);// A-> Act
+		assertEquals(5, result); // A->assert
+	}
+	
+	@Test
+	void testDivideByZero() {
+		assertThrows(ArithmeticException.class, ()->{
+			math.divide(25, 0);
+		});
+	}
+	
+	@Test
+	void testDivideWithNegativeDevisor() {
+		int result = math.divide(25, -5);// A-> Act
+		assertEquals(-5, result); // A->assert
+	}
+	
+	@Test
 	void testAdd() {
 		int result = math.add(2, 5);// A-> Act
 		assertEquals(7, result); // A->assert
