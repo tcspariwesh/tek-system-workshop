@@ -1,0 +1,39 @@
+23-March(9th day): Log File Analyzer
+Problem Statement
+Given:
+system.log
+INFO: Start
+ERROR: DB failed
+WARNING: Low memory
+ERROR: Disk full
+________________________________________
+Requirements
+1.	Read file
+2.	Store counts in HashMap
+3.	Handle file exceptions
+4.	Log missing file error
+________________________________________
+Starter Code
+import java.io.*;
+import java.util.*;
+
+public class LogAnalyzer {
+
+    public static void main(String[] args) {
+
+        Map<String,Integer> map = new HashMap<>();
+
+        // TODO: Read file
+
+        // TODO: Count log types
+
+        // TODO: Handle exception
+
+        // TODO: Print results
+    }
+}
+________________________________________
+Expected Output
+INFO: 1
+WARNING: 1
+ERROR: 2
