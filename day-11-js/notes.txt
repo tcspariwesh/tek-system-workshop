@@ -1,0 +1,3 @@
+ES5 ECMAScript 6 -> object based, no class
+ES6 ECMAScript 6 -> object oriented
+1 = 1024  *1024 byte
