@@ -1,12 +1,23 @@
+function printPyramid() {
+    
+}
 
-function filterDemo1() {
+/* function challenge() {
+    let i = '3';
+    if (i === 3) {
+        console.log('success', i);
+    }
+}
+challenge(); */
+
+/* function filterDemo1() {
     let numbers = [1, 2, 3, 4, 5];
     const incremented = numbers.filter((value) => value % 2 == 0);
     console.log(incremented);
     console.log(numbers);
 }
 filterDemo1()
-
+ */
 
 /* const callback = (value, index) => {
     console.log(value, index);
