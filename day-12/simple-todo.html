@@ -13,9 +13,10 @@
     <div class="app">
         <h2>Todo App</h2>
         <div class="input-group">
-            <input type="text" id="todo-input" placeholder="Enter task...">
+            <input type="text" onkeyup="validate()" id="todo-input" placeholder="Enter task...">
             <button onclick="addTodo()">Add</button>
             <button class="" onclick="sort()">sort by name</button>
+            <div class="error" id="error">Name is mandatory</div>
         </div>
         <ul id="todo-list"></ul>
     </div>

@@ -1,4 +1,5 @@
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
+const errorDiv = document.getElementById('error');
 
 function saveTodos() {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -10,7 +11,9 @@ function sort() {
     console.log(todos);
     renderTodos();
 }
-
+function validate() { //event handler
+    errorDiv.style.display = (event.target.value.trim() !== '') ? 'none' : 'inline';
+}
 function renderTodos() {
     const list = document.getElementById('todo-list');
     list.innerHTML = '';
