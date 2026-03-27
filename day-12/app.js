@@ -1,18 +1,25 @@
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-        function saveTodos() {
-            localStorage.setItem('todos', JSON.stringify(todos));
-        }
+function saveTodos() {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+function sort() {
+    todos.sort((e1, e2) => {
+        return e1.text.localeCompare(e2.text);
+    })
+    console.log(todos);
+    renderTodos();
+}
 
-        function renderTodos() {
-            const list = document.getElementById('todo-list');
-            list.innerHTML = '';
+function renderTodos() {
+    const list = document.getElementById('todo-list');
+    list.innerHTML = '';
 
-            todos.forEach((todo, index) => {
-                const li = document.createElement('li');
-                if (todo.completed) li.classList.add('completed');
+    todos.forEach((todo, index) => {
+        const li = document.createElement('li');
+        if (todo.completed) li.classList.add('completed');
 
-                li.innerHTML = `
+        li.innerHTML = `
         <span>${todo.text}</span>
         <div class="actions">
           <button class="complete" onclick="toggleComplete(${index})">✔</button>
@@ -20,34 +27,34 @@ let todos = JSON.parse(localStorage.getItem('todos')) || [];
         </div>
       `;
 
-                list.appendChild(li);
-            });
-        }
+        list.appendChild(li);
+    });
+}
 
-        function addTodo() {
-            const input = document.getElementById('todo-input');
-            const text = input.value.trim();
+function addTodo() {
+    const input = document.getElementById('todo-input');
+    const text = input.value.trim();
 
-            if (text === '') return;
+    if (text === '') return;
 
-            todos.push({ text, completed: false });
-            input.value = '';
+    todos.push({ text, completed: false });
+    input.value = '';
 
-            saveTodos();
-            renderTodos();
-        }
+    saveTodos();
+    renderTodos();
+}
 
-        function deleteTodo(index) {
-            todos.splice(index, 1);
-            saveTodos();
-            renderTodos();
-        }
+function deleteTodo(index) {
+    todos.splice(index, 1);
+    saveTodos();
+    renderTodos();
+}
 
-        function toggleComplete(index) {
-            todos[index].completed = !todos[index].completed;
-            saveTodos();
-            renderTodos();
-        }
+function toggleComplete(index) {
+    todos[index].completed = !todos[index].completed;
+    saveTodos();
+    renderTodos();
+}
 
-        // Initial render
-        renderTodos();
+// Initial render
+renderTodos();
