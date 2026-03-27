@@ -1,5 +1,8 @@
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 const errorDiv = document.getElementById('error');
+window.addEventListener('mouseover', function (event) {
+    console.log(event);
+})
 
 function saveTodos() {
     localStorage.setItem('todos', JSON.stringify(todos));
