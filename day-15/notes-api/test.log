@@ -1,0 +1,96 @@
+
+> notes-api@1.0.0 test
+> mocha --watch
+
+[?25lserver started
+
+
+  GET /notes
+    - should return all notes123 
+    - should return 404 for non existent noteID 
+undefined
+    1) test create new note
+
+
+  0 passing (2s)
+  2 pending
+  1 failing
+
+  1) GET /notes
+       test create new note:
+     Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (F:\tek-systems\learner-code\pariwesh\tek-system-workshop\day-15\notes-api\test\api.test.js)
+      at listOnTimeout (node:internal/timers:588:17)
+      at process.processTimers (node:internal/timers:523:7)
+
+
+
+[2Kserver started
+
+
+  GET /notes
+    - should return all notes123 
+    - should return 404 for non existent noteID 
+undefined
+    √ test create new note
+
+
+  1 passing (17ms)
+  2 pending
+
+[2Kserver started
+
+
+  GET /notes
+    - should return all notes123 
+    - should return 404 for non existent noteID 
+undefined
+    1) test create new note
+
+
+  0 passing (13ms)
+  2 pending
+  1 failing
+
+  1) GET /notes
+       test create new note:
+
+      AssertionError: expected 201 to equal 202
+      + expected - actual
+
+      -201
+      +202
+      
+      at Context.<anonymous> (test\api.test.js:22:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+
+
+[2Kserver started
+
+
+  GET /notes
+    - should return all notes123 
+    - should return 404 for non existent noteID 
+undefined
+    1) test create new note
+
+
+  0 passing (29ms)
+  2 pending
+  1 failing
+
+  1) GET /notes
+       test create new note:
+
+      AssertionError: expected 201 to equal 202
+      + expected - actual
+
+      -201
+      +202
+      
+      at Context.<anonymous> (test\api.test.js:22:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+
+
+[?25h[?25hTerminate batch job (Y/N)? 
