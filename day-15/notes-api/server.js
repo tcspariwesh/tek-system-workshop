@@ -5,6 +5,8 @@ const notesRoutes  = require('./routes/notesRoutes');//mapping between path and 
 
 app.use('/notes', notesRoutes); //middleware, global path
 app.use(express.json());
-app.listen(3001, ()=>{
+app.listen(3000, ()=>{
     console.log('server started');
 })
+
+module.exports = app;
