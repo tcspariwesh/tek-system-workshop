@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import NoteList from "./NoteList";
-
+import '@testing-library/jest-dom';
 test("renders notes", () => {
   const notes = [
     { id: 1, text: "Note 1" },

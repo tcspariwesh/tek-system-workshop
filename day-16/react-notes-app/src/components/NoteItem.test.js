@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import NoteItem from "./NoteItem";
-
+import '@testing-library/jest-dom';
 test("calls delete on click", () => {
   const deleteNote = jest.fn();
   const note = { id: 1, text: "Test" };

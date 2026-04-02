@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import NoteForm from "./NoteForm";
 
 test("adds note on submit", () => {
-  const addNote = jest.fn();
+  const addNote = jest.fn();//mock
 
   render(<NoteForm addNote={addNote} />);
 

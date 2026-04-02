@@ -3,7 +3,7 @@ import NoteForm from "./components/NoteForm";
 import NoteList from "./components/NoteList";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]);// model
 
   const addNote = (text) => {
     const newNote = { id: Date.now(), text };
@@ -12,8 +12,7 @@ function App() {
 
   const deleteNote = (id) => {
     setNotes(notes.filter((n) => n.id !== id));
-  };
-
+  }
   return (
     <div>
       <h1>Notes App</h1>
