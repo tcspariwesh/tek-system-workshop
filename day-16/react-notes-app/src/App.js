@@ -5,9 +5,8 @@ import NoteList from "./components/NoteList";
 function App() {
   const [notes, setNotes] = useState([]);// model
 
-  const addNote = (note) => {
-    const newNote = { ...note };
-    newNote.id = Date.now(),
+  const addNote = (text) => {
+    const newNote = { id: Date.now(), text };
     setNotes([...notes, newNote]);
   };
 
