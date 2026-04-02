@@ -1,22 +1,26 @@
 import { useState } from "react";
 
 function NoteForm({ addNote }) {
-  const [text, setText] = useState("");
+  const [note, setNote] = useState({
+    title:"my note",
+    status: "created"
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!text.trim()) return;
-    addNote(text);
-    setText("");
+    // if (!note.trim()) return;
+    addNote(note);
+    // setNote({});
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         placeholder="Enter note"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={note.title}
+        onChange={(e) => setNote({title:e.target.value})}
       />
+      <input value={note.status}  onChange={(e) => setNote({title:e.target.value})} />
       <button>Add</button>
     </form>
   );
