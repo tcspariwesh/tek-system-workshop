@@ -1,7 +1,7 @@
 function NoteItem({ note, deleteNote }) {
   return (
     <li>
-      {note.title} , {note.status}
+      {note.text}
       <button onClick={() => deleteNote(note.id)}>Delete</button>
     </li>
   );
