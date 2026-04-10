@@ -13,5 +13,9 @@ public class NoteService {
 		order.setPrice(100F);
 		return order;
 	}
+
+	public Integer addOrder(Order1 order1) {
+		return 1;
+	}
 	
 }
