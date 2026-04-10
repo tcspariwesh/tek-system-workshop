@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -27,7 +29,7 @@ public class NoteController {// dependent
 	NoteService noteService;// dependency
 
 	@GetMapping
-	Order1 getOrder() {
+	Iterable<Order1> getOrder() {
 		return noteService.getOrder();
 	}
 	@PostMapping
@@ -47,5 +49,10 @@ public class NoteController {// dependent
 	        errors.put(fieldName, errorMessage);
 	    });
 	    return errors;
+	}
+	@ExceptionHandler(Exception.class)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	public String handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+		return " something went wrong, please retry";
 	}
 }
