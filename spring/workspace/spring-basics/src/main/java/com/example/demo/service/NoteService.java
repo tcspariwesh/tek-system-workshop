@@ -1,0 +1,17 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Order1;
+
+@Service
+public class NoteService {
+
+	public Order1 getOrder() {
+		Order1 order= new Order1();
+		order.setItem("Laptop");
+		order.setPrice(100F);
+		return order;
+	}
+	
+}

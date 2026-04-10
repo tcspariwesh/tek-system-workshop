@@ -1,12 +1,17 @@
 package com.example.demo.controller;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-//@Component
-//@Scope("prototype")
-public class NoteController {
-	public NoteController(){
-		System.out.println("initial");
+import com.example.demo.entity.Order1;
+import com.example.demo.service.NoteService;
+@RestController //JSON
+public class NoteController {//dependent
+	@Autowired
+	NoteService noteService;//dependency
+	@GetMapping("/order")
+	Order1 getOrder(){
+		return noteService.getOrder();
 	}
 }
