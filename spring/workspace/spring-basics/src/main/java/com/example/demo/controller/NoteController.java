@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +41,7 @@ public class NoteController {// dependent
 		return noteService.getOrder();
 	}
 	@PostMapping
-	Integer createOrder(@RequestBody @Valid Order1 order1) {
+	Integer createOrder(@RequestBody @Valid Order1 order1) throws IOException {
 		System.out.println(order1.getPrice());
 		return noteService.addOrder(order1);
 	}
