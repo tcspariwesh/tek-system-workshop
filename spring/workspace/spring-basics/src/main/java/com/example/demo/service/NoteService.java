@@ -24,10 +24,10 @@ public class NoteService {
 	}
 
 	@Transactional(rollbackFor = Exception.class, noRollbackFor = { IOException.class })
-	public Integer addOrder(Order1 order1) throws IOException {
+	public Integer addOrder(Order1 order1)  {
 		paymentService.processPayment();
 		order1Repository.save(order1);
-		emailService.send(order1.getId());
+//		emailService.send(order1.getId());
 		return order1.getId();
 	}
 

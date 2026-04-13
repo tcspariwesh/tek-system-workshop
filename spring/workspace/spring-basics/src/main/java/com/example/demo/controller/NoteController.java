@@ -1,11 +1,10 @@
 package com.example.demo.controller;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -30,7 +29,7 @@ import jakarta.validation.Valid;
 public class NoteController {// dependent
 	@Autowired
 	NoteService noteService;// dependency
-
+	
 	@GetMapping("/{id}")
 	Optional<Order1> getOrderById(@PathVariable Integer id) {
 		return noteService.getOrderById(id);
@@ -41,7 +40,7 @@ public class NoteController {// dependent
 		return noteService.getOrder();
 	}
 	@PostMapping
-	Integer createOrder(@RequestBody @Valid Order1 order1) throws IOException {
+	Integer createOrder(@RequestBody @Valid Order1 order1) {
 		System.out.println(order1.getPrice());
 		return noteService.addOrder(order1);
 	}
