@@ -12,13 +12,13 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.example.demo.entity.Order1;
-import com.example.demo.service.NoteService;
+import com.example.demo.service.INoteService;
 
 class NoteControllerTest {
 	@InjectMocks
 	NoteController noteController;
 	@Mock
-	NoteService noteService;
+	INoteService noteService;
 
 	@Test
 	void testGetOrderById() {

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Order1;
-import com.example.demo.service.NoteService;
+import com.example.demo.service.INoteService;
 
 import jakarta.validation.Valid;
 
@@ -28,7 +28,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/order")
 public class NoteController {// dependent
 	@Autowired
-	NoteService noteService;// dependency
+	INoteService noteService;// dependency
 	
 	@GetMapping("/{id}")
 	Optional<Order1> getOrderById(@PathVariable Integer id) {
@@ -41,6 +41,7 @@ public class NoteController {// dependent
 	}
 	@PostMapping
 	Integer createOrder(@RequestBody @Valid Order1 order1) {
+		
 		System.out.println(order1.getPrice());
 		return noteService.addOrder(order1);
 	}
